@@ -130,6 +130,7 @@ class Sidebar extends React.Component {
               //
               if(prop.name == "Hospedaje") return null;
               if(prop.name == "Actualizar Hospedaje") return null;
+              if(prop.name == "Double factor") return null;
               if(localStorage.IsLogged === "true"){
                 if(prop.name == "Registro") return null;
                 if(prop.name == "Iniciar Sesión") return null;

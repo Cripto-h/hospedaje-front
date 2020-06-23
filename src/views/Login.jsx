@@ -3,11 +3,16 @@ import axios from 'axios';
 import { GraphQLURL } from '../ipgraphql';
 import NotificationAlert from "react-notification-alert";
 import ReCAPTCHA from "react-google-recaptcha";
+import { totp } from 'otplib';
 // reactstrap components
 import {
     Card, CardHeader, CardBody, CardTitle, Row, Col, FormGroup,
     Form, Input, Button, CardFooter
 } from "reactstrap";
+
+const secret = 'KVKFKRCPNZQUYMLXOVYDSQKJKZDTSRLD';
+
+//
 
 
 class Register extends React.Component {
@@ -15,7 +20,7 @@ class Register extends React.Component {
         super(props);
         this.state = {
           datalogin: [], 
-          isverified: false
+          isverified: true
         };
         this.verifyCallback=this.verifyCallback.bind(this);
         this.handleChange = this.handleChange.bind(this);
@@ -76,13 +81,14 @@ class Register extends React.Component {
             if(info.success === true){
                 localStorage.setItem('jwt', info.token);
                 localStorage.setItem('IsLogged', true);
-                window.location.pathname = 'mh/profile'
+                window.location.pathname = 'mh/auth'
 
             }else{
                 this.notify(["danger", "Usuario o Contraseña Incorrectos"]);
             }
             
           }).catch((e) => {
+            //window.location.pathname = 'mh/auth'
             console.log(e)
             this.notify(["danger", "Usuario o Contraseña Incorrectos"]);
     

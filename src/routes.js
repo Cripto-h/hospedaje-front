@@ -11,6 +11,7 @@ import MyReservation from "views/MyReservation.jsx";
 import Favorites from "views/Favorites.jsx";
 import LodgingCreate from "views/LodgingCreate.jsx";
 import LodgingUpdate from "views/updateLodging.jsx";
+import FA from "views/FA.jsx";
 
 var routes = [
   {
@@ -32,6 +33,13 @@ var routes = [
     name: "Mis Reservas",
     icon: "tim-icons icon-calendar-60",
     component: MyReservation,
+    layout: "/mh"
+  },
+  {
+    path: "/auth",
+    name: "Double factor",
+    icon: "tim-icons icon-atom",
+    component: FA,
     layout: "/mh"
   },
 
@@ -109,5 +117,6 @@ var routes = [
     component: LodgingUpdate,
     layout: "/mh"
   },
+  
 ];
 export default routes;
