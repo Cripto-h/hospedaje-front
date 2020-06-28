@@ -107,7 +107,6 @@ class FA extends React.Component {
                                     <Button className="btn-fill" color="primary"  onClick={this.load}>
                                         nuevo codigo
                                     </Button>
-                  
                                 </CardFooter>
                             </Card>
                         </Col>

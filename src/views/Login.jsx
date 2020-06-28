@@ -88,7 +88,6 @@ class Register extends React.Component {
             }
             
           }).catch((e) => {
-            //window.location.pathname = 'mh/auth'
             console.log(e)
             this.notify(["danger", "Usuario o Contraseña Incorrectos"]);
     
@@ -123,9 +122,6 @@ class Register extends React.Component {
                                         <FormGroup>
                                             <label> Contraseña</label>
                                             <Input id="1" type="password" onChange={this.handleChange}/>
-                                        </FormGroup>
-                                        <FormGroup>
-                                          <ReCAPTCHA   sitekey="6LfSNqgZAAAAAH2flnchYeYMC9REmghT7lFw_OOk" onChange={this.verifyCallback} />
                                         </FormGroup>
                                     </Form>
                                     
